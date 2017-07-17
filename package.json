@@ -1,0 +1,17 @@
+{
+  "name": "simple-aws-mfa",
+  "version": "0.1.0",
+  "bin": {
+    "simple-aws-mfa": "./index.js"
+  },
+  "author": {
+    "name": "Jon Hoguet",
+    "email": "jhoguet@gmail.com",
+    "url": "https://www.linkedin.com/in/jonathan-hoguet-65752321/"
+  },
+  "license" : "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.71.0",
+    "shelljs": "^0.7.8"
+  }
+}
