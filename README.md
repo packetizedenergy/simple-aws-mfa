@@ -29,7 +29,7 @@ aws-mfa-login(){
 
 and called without the mfa-arn
 
-aws-mfa-login <token>
+    aws-mfa-login <token>
 
 or if you have multiple aws accounts
 
