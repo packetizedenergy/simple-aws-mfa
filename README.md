@@ -29,7 +29,7 @@ aws-mfa-login(){
 
 and called without the mfa-arn
 
-    aws-mfa-login <token>
+    aws-mfa-login <token>   
 
 or if you have multiple aws accounts
 
@@ -46,3 +46,5 @@ aws-account2(){
     eval $(npx simple-aws-mfa <mfa-arn-2> $1)
 }
 ```
+
+Note that after logging in, your `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` will be stomped on by the STS values from your MFA. So you should close your bash session and create a new one to start from scratch. 
