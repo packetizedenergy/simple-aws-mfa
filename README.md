@@ -19,13 +19,32 @@ then execute the following
 
     eval $(npx simple-aws-mfa <mfa-arn> <token>)
 
-underneath the covers this is 
+you can then alias this as 
 
-    aws sts get-session-token --serial-number <mfa-arn> --token-code=<token>
+this could be wrapped into a function
 
-I have multiple AWS accounts, and don't like needing to specify profiles, so I just use a bash function
-
-```
-aws-jon(){
-    
+```sh
+aws-mfa-login(){
+    eval $(npx simple-aws-mfa <mfa-arn> $1)
 }
+```
+
+and called without the mfa-arn
+
+aws-mfa-login <token>
+
+or if you have multiple aws accounts
+
+```sh
+aws-account1(){
+    export AWS_SECRET_ACCESS_KEY="..."
+    export AWS_ACCESS_KEY_ID="..."
+    eval $(npx simple-aws-mfa <mfa-arn-1> $1)
+}
+
+aws-account2(){
+    export AWS_SECRET_ACCESS_KEY="..."
+    export AWS_ACCESS_KEY_ID="..."
+    eval $(npx simple-aws-mfa <mfa-arn-2> $1)
+}
+```
