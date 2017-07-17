@@ -19,9 +19,7 @@ then execute the following
 
     eval $(npx simple-aws-mfa <mfa-arn> <token>)
 
-you can then alias this as 
-
-this could be wrapped into a function
+this could be wrapped into a bash function
 
 ```sh
 aws-mfa-login(){
