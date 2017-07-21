@@ -35,12 +35,14 @@ or if you have multiple aws accounts
 
 ```sh
 aws-account1(){
+    unset AWS_SESSION_TOKEN
     export AWS_SECRET_ACCESS_KEY="..."
     export AWS_ACCESS_KEY_ID="..."
     eval $(npx simple-aws-mfa <mfa-arn-1> $1)
 }
 
 aws-account2(){
+    unset AWS_SESSION_TOKEN
     export AWS_SECRET_ACCESS_KEY="..."
     export AWS_ACCESS_KEY_ID="..."
     eval $(npx simple-aws-mfa <mfa-arn-2> $1)
