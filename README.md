@@ -2,7 +2,7 @@
 
 Making MFA easier
 
-First you should configure MFA in your account by adding the following to the actions your cli user is authorized to
+First you should restrict MFA for your user (ideally your group) by adding the following to the actions your cli user is authorized to
 
 ```json
 "Condition":
@@ -11,25 +11,29 @@ First you should configure MFA in your account by adding the following to the ac
 }
 ```
 
-then take note of you MFA ARN
+Then you should add an MFA to your user and take note of you MFA ARN. (I have been using Google Authenticator as my virtual device). 
 
 <img src="./docs/where-to-find-mfa-arn.png"/> 
 
+Install `simple-aws-mfa`
+    
+    npm install -g simple-aws-mfa
+
 then execute the following
 
-    eval $(npx simple-aws-mfa <mfa-arn> <token>)
+    eval $(simple-aws-mfa <mfa-arn> <token>)
 
 this could be wrapped into a bash function
 
 ```sh
-aws-mfa-login(){
+my-mfa-login(){
     eval $(npx simple-aws-mfa <mfa-arn> $1)
 }
 ```
 
 and called without the mfa-arn
 
-    aws-mfa-login <token>   
+    my-mfa-login <token>   
 
 or if you have multiple aws accounts
 
