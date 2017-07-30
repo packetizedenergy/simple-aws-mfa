@@ -53,4 +53,4 @@ aws-account2(){
 }
 ```
 
-Note that after logging in, your `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` will be stomped on by the STS values from your MFA. So you should close your bash session and create a new one to start from scratch. 
+Note that after logging in, your `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` will be stomped on by the STS values from your MFA. So you should close your bash session and create a new one to start from scratch. Or you can use the bash functions described above which reset the values for you.  
