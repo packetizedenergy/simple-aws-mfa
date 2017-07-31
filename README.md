@@ -27,6 +27,9 @@ this could be wrapped into a bash function
 
 ```sh
 my-mfa-login(){
+    unset AWS_SESSION_TOKEN
+    export AWS_SECRET_ACCESS_KEY="..."
+    export AWS_ACCESS_KEY_ID="..."
     eval $(npx simple-aws-mfa <mfa-arn> $1)
 }
 ```
@@ -42,14 +45,14 @@ aws-account1(){
     unset AWS_SESSION_TOKEN
     export AWS_SECRET_ACCESS_KEY="..."
     export AWS_ACCESS_KEY_ID="..."
-    eval $(npx simple-aws-mfa <mfa-arn-1> $1)
+    eval $(simple-aws-mfa <mfa-arn-1> $1)
 }
 
 aws-account2(){
     unset AWS_SESSION_TOKEN
     export AWS_SECRET_ACCESS_KEY="..."
     export AWS_ACCESS_KEY_ID="..."
-    eval $(npx simple-aws-mfa <mfa-arn-2> $1)
+    eval $(simple-aws-mfa <mfa-arn-2> $1)
 }
 ```
 
