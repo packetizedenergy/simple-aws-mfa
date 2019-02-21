@@ -9,9 +9,10 @@
     "email": "jhoguet@gmail.com",
     "url": "https://www.linkedin.com/in/jonathan-hoguet-65752321/"
   },
-  "license" : "ISC",
+  "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.71.0",
+    "minimist": "^1.2.0",
     "shelljs": "^0.7.8"
   }
 }
